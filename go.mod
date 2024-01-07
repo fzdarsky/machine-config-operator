@@ -1,4 +1,4 @@
-module github.com/openshift/machine-config-operator
+module github.com/fzdarsky/machine-config-operator
 
 go 1.20
 

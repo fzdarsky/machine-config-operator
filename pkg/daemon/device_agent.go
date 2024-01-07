@@ -199,7 +199,16 @@ func (dn *Daemon) updateInDeviceAgentMode(oldConfig, newConfig *mcfgv1.MachineCo
 	return rebootRequired, dn.performPostConfigChangeAction(actions, newConfig.GetName())
 }
 
-// export the reboot function
+// Export a few useful functions
+
 func (dn *Daemon) Reboot(rationale string) error {
 	return dn.reboot(rationale)
+}
+
+func RunCmdSync(cmdName string, args ...string) error {
+	return runCmdSync(cmdName, args...)
+}
+
+func LogSystem(format string, a ...interface{}) {
+	logSystem(format, a)
 }
